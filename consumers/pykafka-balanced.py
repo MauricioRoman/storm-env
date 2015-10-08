@@ -15,7 +15,7 @@ if __name__ == "__main__":
     except IndexError:
         group_name = "default"
     client = KafkaClient(hosts='localhost:9092')
-    topic = client.topics.get(topic_name)
+    topic = client.topics[topic_name]
     if not topic:
         print "no topic %s" % topic_name
         sys.exit(1)
